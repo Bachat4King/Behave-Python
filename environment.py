@@ -10,7 +10,6 @@ def init_browser():
     else:
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")
-        options.add_argument("--start-maximized")
         return webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
 
