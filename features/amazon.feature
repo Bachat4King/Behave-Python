@@ -1,4 +1,4 @@
-@web
+@UI
 Feature: Amazon Examples
 
   Background: Amazon: go to amazon website

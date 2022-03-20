@@ -16,7 +16,7 @@ def init_browser():
 def before_scenario(context, scenario):
     print(f"scenario running: {scenario.name}")
 
-    if "web" in context.feature.tags:
+    if "UI" in context.feature.tags:
         context.browser = init_browser()
 
 
