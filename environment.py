@@ -10,12 +10,12 @@ def init_browser():
     else:
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
         return webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
 
 def before_scenario(context, scenario):
     print(f"scenario running: {scenario.name}")
-
     if "UI" in context.feature.tags:
         context.browser = init_browser()
 
