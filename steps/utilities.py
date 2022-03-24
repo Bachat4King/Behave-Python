@@ -1,5 +1,6 @@
 from behave import step
 from utils.utils import *
+import re
 
 @step('visualize this horizontal table')
 def step_impl(context):
@@ -19,6 +20,7 @@ def step_impl(context):
          {'Head1': 'Cell2_1', 'Head2': 'Cell2_2'}]
         """
     print(list_of_dictionaries(context))
+
 
 @step('Visualize this table')
 def step_impl(context):
@@ -81,3 +83,13 @@ def visualize_tags(context):
     """
     print(context.feature.tags)
     return context.feature.tags
+
+
+@step('print {to_print} as a context variable')
+def print_context_var(context, to_print):
+    print(to_print)
+    context.name = "Bastian"
+    # verify if an strings matches format: {{var_name}} using regex
+    if re.match(r"\{\{(.*)\}\}", to_print):
+        to_print = to_print.replace("{{", "").replace("}}", "")
+        print(eval(to_print))

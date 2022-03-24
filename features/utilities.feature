@@ -44,3 +44,8 @@ Feature: utilities
     And visualize the feature name
     And visualize the feature filename
     Then visualize the tags
+
+    # Context variables
+
+  Scenario: context variables
+    Given print {{ context.name }} as a context variable
