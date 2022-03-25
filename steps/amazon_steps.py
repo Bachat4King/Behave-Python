@@ -12,7 +12,7 @@ def put_search_value(context, search_term):
 
 @step('select the first product that has {product_name} in its name')
 def select_product_by_name(context, product_name):
-    products = context.browser.find_elements(By.XPATH, "//div[contains(@class, 'title-instructions')]/h2//spann")
+    products = context.browser.find_elements(By.XPATH, "//div[contains(@class, 'title-instructions')]/h2//span")
     products_texts = [product.text for product in products]
     index = -2
     for product in products_texts:
